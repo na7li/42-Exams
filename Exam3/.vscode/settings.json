@@ -1,0 +1,14 @@
+{
+	"files.associations": {
+		"bitset": "c",
+		"functional": "c",
+		"iterator": "c",
+		"memory": "c",
+		"__bit_reference": "c",
+		"algorithm": "c",
+		"chrono": "c",
+		"unordered_map": "c",
+		"stdlib.h": "c",
+		"stdio.h": "c"
+	}
+}

@@ -1,0 +1,691 @@
+test's output?c1r3p9:Desktop exam$ ls
+0-0_ft_scanf.trace	exame			ft_scanf_subject.c
+a.out			ft_scanf.c		subject.en.txt
+backupscanf.c		ft_scanf_asliya.c
+c1r3p9:Desktop exam$ ls -l
+total 80
+-rw-r--r--  1 exam  applications   2643 May  7 13:21 0-0_ft_scanf.trace
+-rwxr-xr-x  1 exam  applications  13364 May  7 13:41 a.out
+-rw-r--r--  1 exam  applications   2615 May  7 11:53 backupscanf.c
+drwxr-xr-x  9 exam  applications    288 May  7 13:12 exame
+-rw-r--r--  1 exam  applications   2714 May  7 13:41 ft_scanf.c
+-rw-r--r--  1 exam  applications   1383 May  7 12:48 ft_scanf_asliya.c
+-rw-r--r--  1 exam  applications   1383 May  7 11:02 ft_scanf_subject.c
+-rw-r--r--  1 exam  applications    949 May  7 12:48 subject.en.txt
+c1r3p9:Desktop exam$ cat *
+= Host-specific information ====================================================
+$> hostname; uname -msr
+c2r2p4.1337.ma
+Darwin 19.6.0 x86_64
+$> date
+Wed May  7 11:56:48 +01 2025
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.1337.ma:exam-2025-05-07/mnahli_exam-rank-02_exam_17h10m37s.git
+
+= Git history ==================================================================
+$> git -C /tmp/tmpbo45n2rf/user log --pretty='%H - %an, %ad : %s'
+c1f56984bd342d8757a019b8aadbaa617612db47 - Exam 42, Wed May 7 11:56:33 2025 +0100 : done
+
+= Collected files ==========================================
+$> ls -lAR /tmp/tmpbo45n2rf/user
+total 8
+-rw-r--r--  1 root  wheel  250 May  7 11:56 __GIT_HISTORY
+drwxr-xr-x  3 root  wheel   96 May  7 11:56 ft_scanf
+
+/tmp/tmpbo45n2rf/user/ft_scanf:
+total 8
+-rw-r--r--  1 root  wheel  2088 May  7 11:56 ft_scanf.c
+
+= ft_scanf =====================================================================
+$> cc -Wextra -Wall -Werror main.c ft_scanf.c -o user_exe
+
+$> cc -Wextra -Wall -Werror main.c ft_scanf.c -o ref_exe
+
+= Test 1 ===================================================
+$> ./y27rxne9yurn7j247b3t640x 1 < test1.stdin
+$> ./y27rxne9yurn7j247b3t640x 1 < test1.stdin
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./zx0uqts1i6qy8lrc2na5rhe5 2 < test2.stdin
+$> ./zx0uqts1i6qy8lrc2na5rhe5 2 < test2.stdin
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./ih375te6gexrc1af1czozeno 3 < test3.stdin
+$> ./ih375te6gexrc1af1czozeno 3 < test3.stdin
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./qid3vn3ca4nh9lb5u16ehd7y 4 < test4.stdin
+$> ./qid3vn3ca4nh9lb5u16ehd7y 4 < test4.stdin
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./7f4o6scgvpsh3qd9482c91s2 5 < test5.stdin
+$> ./7f4o6scgvpsh3qd9482c91s2 5 < test5.stdin
+
+$> diff -U 3 user_output_test5 test5.output | cat -e
+--- user_output_test5	2025-05-07 10:56:53.000000000 +0000$
++++ test5.output	2025-05-07 10:56:54.000000000 +0000$
+
+@@ -1,3 +1,3 @@$
+ 0: ret = 3, a = 1, b = 23, c = a$
+ 1: ret = 2, a = 42, b = lecoledexavierniel42, c = -1$
+-2: ret = 2, a =  , b = 12$
++2: ret = 2, a = a, b = 12$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================
+
+
+
+tested input ?
+my output?
+test's output?�����X� H__PAGEZERO�__TEXT__text__TEXT���__stubs__TEXT�__stub_helper__TEXT4`4�__cstring__TEXT��__unwind_info__TEXT�T��__DATA_CONST__got__DATA_CONS�__DATA  __la_symbol_ptr__DATA @
+                                 __data__DATA@@ H__LINKEDIT004"�08@0��0��143
+                                                                            P
+
+
+�2
+   /usr/lib/dyld��=mІ:��Ӭ�!�*2
+
+*(��
+    8/usr/lib/libSystem.B.dylib&p1)�1UH��H�� H�}�H�}���E�}�����H�}���E�������}���
+ �E�������}�H�u���E��E�E�H�� ]ÐUH��H�� @��H�}�E�H�}����M��E��u�9��
+                                                                  �E�������E��E�H�� ]�@UH��H��@H�}�H�u�H�}�����M��E����
+                                       �E������dH�E��(H�EЉM���E�Hc�H�U�HJ��H�M��H�E�H�H��H�H�H�U�H�E�H�H�E؊M�H�E�E��E�H��@]�f.�f�UH��H��`H�}�H�u��E��E��E�H�}����E̋}������ �}�-��}�+�
+                    �E�������}�-�
+�}�+��}�-��E�����H�}���E���}�����'kE�
+�M̃�0ȉE�H�}��_�E��E�������}��
+                            �E������H�E��(H�E��M���E�Hc�H�U�HJ��H�M��H�E�H�H��H�H�H�U�H�E�H�H�EЋM��M�H�E�}����}�H�u����E��E��E�H��`]�UH��H��PH�}�H�u�H�}���E�H�u���(H�uȉE���E�Hc�H�U�HJ��H�M��H�E�H�H��H�H�H�U�H�E�H�H�E��E��}���
+                                                                 �E��������}��"1�@����M��
+�}�����E��E����.�E��E��H�U�H��H��H�u؈
+H�}����E������}��
+                 �E������.H�E���}������}�H�u���E��E��E�H��P]�UH��H��@H�}�H�u�H�U�H�U�H��������E܉M�����E܃�c�E��-��E܃�d�E��.��E܃�s�E��;�cH�}�H�u��#����E��UH�}��R���H�}�H�u�E������E��4H�}��1���H�}�H�u�E������E���E�������E������E�H��@]�f.�UH��H��0H�}�H�u�H�U��E�H�}��\�E؃}���
+                               �E��������}�H�u��U�E�H�E�8��H�E���%�9H�E�H��H�E�H�}�H�U�H�u���������x�E܃��E��YH�E��8�����H�}��0��������>�#H�}�H�E��0�}���������H�E�H��H�E��@���H�}��e���
+                       �E�������E܉E�E�H��0]��UH��SH����)����)�����)�����)�����)�����)�����)�����)�����L������L������H��x���H��p���H��h���H��`����d(�����)�@���(�����)�P���(�����)�`���(�����)�p���(�����)e�(�����)m�(�����)u�(����)}�H������H��8L��M�L�U�L��`���L�U�M��H�����I�[H�]I�A�C0AI�9H�u�L���H���H�MЉEċE�H��H�H�u�H9�H��X�����T������T���H�Ĩ[]��y
+                         UH��H��PH�u�H�]H�H�E��E�H�=���iH�U��E��u�H�=���KH�"H�H�}�H9�E��
+        �H��P]��
+                ��%��%��%��%��%��%�%�%L�AS�%��h�����h�����h&�����h3�����hB����hQ����h_����hl���� %sret = %d, a = %s
+  �888
+      DNXblv��#X@___stack_chk_guardQr�@___stdinp�@dyld_stub_binder�s@___stack_chk_fail�@_ferror�s@_fgetc�s@_isdigit�s @_isspace�s(@_printf�s0@_scanf�s8@_ungetc�pP������@ �ring����vfscanf�scanf�����in�spaceIcN�
+            �
+             ,�2�>�
+J�W@b�l`	y����������
+
+
+ __mh_execute_header_ft_scanf_ft_vfscanf_main_match_char_match_conv_match_space_scan_char_scan_int_scan_string___stack_chk_fail___stack_chk_guard___stdinp_ferror_fgetc_isdigit_isspace_printf_scanf_ungetcdyld_stub_binder__dyld_private#include <stdarg.h>
+#include <stdio.h>
+#include <ctype.h>
+// '    EOF'
+// '    c'
+int match_space(FILE *f)
+{
+	char c = fgetc(f);
+	while (isspace(c))
+		c = fgetc(f);
+	if (c == EOF)
+		return -1;
+	ungetc(c, f);
+	return 1;
+}
+
+int match_char(FILE *f, char c)
+{
+    char b  = fgetc(f);
+	if (b != c)
+		return -1;
+	return 1;
+}
+// 'all except EOF'
+int scan_char(FILE *f, va_list ap)
+{
+    char c = fgetc(f), *ptr = va_arg(ap, char*);
+	if (c == EOF)
+		return -1;
+	*ptr = c;
+	return 1;
+}
+// cases
+// '-123'
+// '-123 kjh'
+// '123'
+// '123 '
+// '123kj'
+// '-sfj'
+// 'jhg'
+// 'EOF'
+int scan_int(FILE *f, va_list ap)
+{
+	int nb = 0, sign = 1, scanned = 0, *res;
+	int c = fgetc(f);
+	if (!isdigit(c) && c != '-' && c != '+')
+		return -1;
+	if (c == '-' || c == '+')
+	{
+		if (c == '-')
+			sign = -1;
+		c = fgetc(f);
+	}
+	while (isdigit(c))
+	{
+		nb = (nb * 10) + (c - '0');
+		c = fgetc(f);
+		scanned = 1;
+	}
+	if (!scanned)
+		return -1;
+	res = va_arg(ap, int*);
+	*res = nb * sign;
+	if (c != EOF)
+		ungetc(c, f);
+	return 1;
+}
+// 'all except 'space' and 'EOF' '
+// 'EOF'
+// '   EOF'
+// 'abc'
+// 'abc hgf'
+// 'fjkh~@![p@lkdsj]GJJF564'
+int scan_string(FILE *f, va_list ap)
+{
+    char c = fgetc(f), *ptr = va_arg(ap, char*);
+	int scanned = 0;
+	if (c == EOF)
+		return -1;
+	while (!isspace(c) && c != EOF)
+	{
+		scanned = 1;
+		*ptr++ = c;
+		c = fgetc(f);
+	}
+	if (!scanned)
+		return -1;
+	*ptr = '\0';
+	if (isspace(c))
+		ungetc(c, f);
+	return 1;
+}
+
+
+int	match_conv(FILE *f, const char **format, va_list ap)
+{
+	switch (**format)
+	{
+		case 'c':
+			return scan_char(f, ap);
+		case 'd':
+			match_space(f);
+			return scan_int(f, ap);
+		case 's':
+			match_space(f);
+			return scan_string(f, ap);
+		case EOF:
+			return -1;
+		default:
+			return -1;
+	}
+}
+
+int ft_vfscanf(FILE *f, const char *format, va_list ap)
+{
+	int nconv = 0;
+
+	int c = fgetc(f);
+	if (c == EOF)
+		return EOF;
+	ungetc(c, f);
+
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			if (match_conv(f, &format, ap) != 1)
+				break;
+			else
+				nconv++;
+		}
+		else if (isspace(*format))
+		{
+			if (match_space(f) == -1)
+				break;
+		}
+		else if (match_char(f, *format) != 1)
+			break;
+		format++;
+	}
+	if (ferror(f))
+		return EOF;
+	return nconv;
+}
+
+
+int ft_scanf(const char *format, ...)
+{
+
+	va_list ap;
+	va_start(ap, format);
+	int ret = ft_vfscanf(stdin, format, ap);
+	va_end(ap);
+	return ret;
+}
+
+//// msa7 intain
+// cases
+// 'all except 'space' and 'EOF' '
+// 'EOF'
+// '   EOF'
+// 'abc'
+// 'abc hgf'
+// 'fjkh~@![p@lkdsj]GJJF564'
+int main()
+{
+	char s[50], c;
+	int d;
+	scanf(" :%c %s %d", &c, s, &d);
+	printf("value of c:'%c'\nvalue of s:'%s'\nvalue of d:'%d'\n", c, s, d);
+	return 1;
+}cat: exame: Is a directory
+#include <stdarg.h>
+#include <stdio.h>
+#include <ctype.h>
+// '    EOF'
+// '    c'
+int match_space(FILE *f)
+{
+	int c = fgetc(f);
+	while (isspace(c))
+		c = fgetc(f);
+	if (c == EOF)
+		return -1;
+	ungetc(c, f);
+	return 1;
+}
+
+int match_char(FILE *f, char c)
+{
+    char b  = fgetc(f);
+	if (b != c)
+		return -1;
+	return 1;
+}
+// 'all except EOF'
+int scan_char(FILE *f, va_list ap)
+{
+    char c = fgetc(f);
+	if (c == EOF)
+		return -1;
+	char *ptr = va_arg(ap, char*);
+	*ptr = c;
+	return 1;
+}
+// cases
+// '-123'
+// '-123 kjh'
+// '123'
+// '123 '
+// '123kj'
+// '-sfj'
+// 'jhg'
+// 'EOF'
+int scan_int(FILE *f, va_list ap)
+{
+	int nb = 0, sign = 1, scanned = 0, *res;
+	int c = fgetc(f);
+	if (!isdigit(c) && c != '-' && c != '+')
+		return -1;
+	if (c == '-' || c == '+')
+	{
+		if (c == '-')
+			sign = -1;
+		c = fgetc(f);
+	}
+	while (isdigit(c))
+	{
+		nb = (nb * 10) + (c - '0');
+		c = fgetc(f);
+		scanned = 1;
+	}
+	if (!scanned)
+		return -1;
+	res = va_arg(ap, int*);
+	*res = nb * sign;
+	if (c != EOF)
+		ungetc(c, f);
+	return 1;
+}
+// 'all except 'space' and 'EOF' '
+// 'EOF'
+// '   EOF'
+// 'abc'
+// 'abc hgf'
+// 'fjkh~@![p@lkdsj]GJJF564'
+int scan_string(FILE *f, va_list ap)
+{
+    int c = fgetc(f);
+	char *ptr = va_arg(ap, char*);
+	int scanned = 0;
+	if (c == EOF)
+		return -1;
+	while (!isspace(c) && c != EOF)
+	{
+		scanned = 1;
+		*ptr++ = c;
+		c = fgetc(f);
+	}
+	if (!scanned)
+		return -1;
+	*ptr = '\0';
+	if (isspace(c))
+		ungetc(c, f);
+	return 1;
+}
+
+
+int	match_conv(FILE *f, const char **format, va_list ap)
+{
+	switch (**format)
+	{
+		case 'c':
+			return scan_char(f, ap);
+		case 'd':
+			match_space(f);
+			return scan_int(f, ap);
+		case 's':
+			match_space(f);
+			return scan_string(f, ap);
+		case EOF:
+			return -1;
+		default:
+			return -1;
+	}
+}
+
+int ft_vfscanf(FILE *f, const char *format, va_list ap)
+{
+	int nconv = 0;
+
+	int c = fgetc(f);
+	if (c == EOF)
+		return EOF;
+	ungetc(c, f);
+
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			if (match_conv(f, &format, ap) != 1)
+				break;
+			else
+				nconv++;
+		}
+		else if (isspace(*format))
+		{
+			if (match_space(f) == -1)
+				break;
+		}
+		else if (match_char(f, *format) != 1)
+			break;
+		format++;
+	}
+	if (ferror(f))
+		return EOF;
+	return nconv;
+}
+
+
+int ft_scanf(const char *format, ...)
+{
+
+	va_list ap;
+	va_start(ap, format);
+	int ret = ft_vfscanf(stdin, format, ap);
+	va_end(ap);
+	return ret;
+}
+
+//// msa7 intain
+// cases
+// 'all except 'space' and 'EOF' '
+// 'EOF'
+// '   EOF'
+// 'abc'
+// 'abc hgf'
+// 'fjkh~@![p@lkdsj]GJJF564'
+int main()
+{
+	// char s[50], c;
+	int ret;
+	char a[50];
+	ret = scanf(" %s", a);
+	printf("ret = %d, a = %s\n", ret, a);
+	// char a;
+	// int b;
+	// ret = ft_scanf("%c %d", &a, &b);
+	// printf("ret = %d, a = %c, b = %d\n", ret, a, b);
+	return 1;
+}#include <stdarg.h>
+#include <stdio.h>
+#include <ctype.h>
+
+int match_space(FILE *f)
+{
+        // You may insert code here
+    return (0);
+}
+
+int match_char(FILE *f, char c)
+{
+        // You may insert code here
+    return (0);
+}
+
+int scan_char(FILE *f, va_list ap)
+{
+        // You may insert code here
+    return (0);
+}
+
+int scan_int(FILE *f, va_list ap)
+{
+        // You may insert code here
+    return (0);
+}
+
+int scan_string(FILE *f, va_list ap)
+{
+        // You may insert code here
+    return (0);
+}
+
+
+int	match_conv(FILE *f, const char **format, va_list ap)
+{
+	switch (**format)
+	{
+		case 'c':
+			return scan_char(f, ap);
+		case 'd':
+			match_space(f);
+			return scan_int(f, ap);
+		case 's':
+			match_space(f);
+			return scan_string(f, ap);
+		case EOF:
+			return -1;
+		default:
+			return -1;
+	}
+}
+
+int ft_vfscanf(FILE *f, const char *format, va_list ap)
+{
+	int nconv = 0;
+
+	int c = fgetc(f);
+	if (c == EOF)
+		return EOF;
+	ungetc(c, f);
+
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			if (match_conv(f, &format, ap) != 1)
+				break;
+			else
+				nconv++;
+		}
+		else if (isspace(*format))
+		{
+			if (match_space(f) == -1)
+				break;
+		}
+		else if (match_char(f, *format) != 1)
+			break;
+		format++;
+	}
+	if (ferror(f))
+		return EOF;
+	return nconv;
+}
+
+
+int ft_scanf(const char *format, ...)
+{
+	// ...
+	int ret = ft_vfscanf(stdin, format, ap);
+	// ...
+	return ret;
+}
+#include <stdarg.h>
+#include <stdio.h>
+#include <ctype.h>
+
+int match_space(FILE *f)
+{
+        // You may insert code here
+    return (0);
+}
+
+int match_char(FILE *f, char c)
+{
+        // You may insert code here
+    return (0);
+}
+
+int scan_char(FILE *f, va_list ap)
+{
+        // You may insert code here
+    return (0);
+}
+
+int scan_int(FILE *f, va_list ap)
+{
+        // You may insert code here
+    return (0);
+}
+
+int scan_string(FILE *f, va_list ap)
+{
+        // You may insert code here
+    return (0);
+}
+
+
+int	match_conv(FILE *f, const char **format, va_list ap)
+{
+	switch (**format)
+	{
+		case 'c':
+			return scan_char(f, ap);
+		case 'd':
+			match_space(f);
+			return scan_int(f, ap);
+		case 's':
+			match_space(f);
+			return scan_string(f, ap);
+		case EOF:
+			return -1;
+		default:
+			return -1;
+	}
+}
+
+int ft_vfscanf(FILE *f, const char *format, va_list ap)
+{
+	int nconv = 0;
+
+	int c = fgetc(f);
+	if (c == EOF)
+		return EOF;
+	ungetc(c, f);
+
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			if (match_conv(f, &format, ap) != 1)
+				break;
+			else
+				nconv++;
+		}
+		else if (isspace(*format))
+		{
+			if (match_space(f) == -1)
+				break;
+		}
+		else if (match_char(f, *format) != 1)
+			break;
+		format++;
+	}
+	if (ferror(f))
+		return EOF;
+	return nconv;
+}
+
+
+int ft_scanf(const char *format, ...)
+{
+	// ...
+	int ret = ft_vfscanf(stdin, format, ap);
+	// ...
+	return ret;
+}
+Assignment name  : ft_scanf
+Expected files   : ft_scanf.c
+Allowed functions: fgetc, ungetc, ferror, feof, isspace, isdigit, stdin, va_start, va_arg, va_copy, va_end
+--------------------------------------------------------------------------------
+
+
+Write a function named `ft_scanf` that will mimic the real scanf with the following constraints:
+
+- It will manage only the following conversions: s, d, and c
+- You don't have to handle the options *, m and '
+- You don't have to handle the maximum field width
+- You don't have to handle the types modifier characters (h, hh, l, etc.)
+- You don't have to handle the conversions beginning with %n$
+
+Your function must be declared as follows:
+
+int ft_scanf(const char *, ... );
+
+You will find in this directory a file containing a part of the code you will need, you just have to complete it.
+
+To test your program compare your results with the real scanf.
+
+Hint : You may need to read the man of scanf.
+c1r3p9:Desktop exam$
