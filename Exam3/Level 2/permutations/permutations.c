@@ -1,146 +1,93 @@
+/*
+sort
+find permutation: 
+swap
+revers
+puts
+*/
+
 #include <stdio.h>
 
-void	swap(char *a, char *b)
+enum {NO_PERMUTATION, NEW_PERMUTATION};
+
+int ft_strlen(char *str)
 {
-	char tmp;
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-	return ;
+    int i = 0;
+
+    if (!str || !*str)
+        return (0);
+    while (str[i])
+        i++;
+    return (i);
 }
 
-void sort(char *str)
+void    swap_chars(char *a, char *b)
 {
-	int	i, swapped = 1;
-	while (swapped)
-	{
-		i = -1, swapped = 0;
-		while (str[++i + 1])
-			if (str[i] > str[i + 1]) {
-				swap(&str[i], &str[i + 1]);
-				swapped = 1;}
-	}
-	return ;
+    char tmp;
+
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
 
-void	revers(char *str, int start, int end)
+void    sort_permuta(char *permuta)
 {
-	while (start < end)
-	{
-		swap(&str[start], &str[end]);
-		start++;
-		end--;
-	}
+    int i = 0;
+
+    if (!permuta || !*permuta)
+        return ;
+    while (permuta[i + 1])
+    {
+        if (permuta[i] > permuta[i + 1])
+        {
+            swap_chars(&permuta[i], &permuta[i + 1]);
+            i = 0;
+        }
+        else
+            i++;
+    }
 }
 
-int	permut(char *str, int end)
+void    revers(char *permuta, int start, int end)
 {
-	if (!str)
-		return (0);
-	int i = end - 1, j = end;
+    while (start < end)
+    {
+        swap_chars(&permuta[start], &permuta[end]);
+        start++;
+        end--;
+    }
+}
 
-	while (str[i] >= str[i + 1])
-		i--;
-	if (i < 0)
-		return (0);
-	while (str[j] <= str[i])
-		j--;
-	swap(&str[j], &str[i]);
-	revers(str, i + 1, end);
-	return (1);
+int find_permutation(char *permuta, int end)
+{
+    int i = end - 1;
+    int j = end;
+
+    while (permuta[i] > permuta[i + 1] && i != -1)
+        i--;
+    if (i < 0)
+        return (NO_PERMUTATION);
+    while (permuta[j] < permuta[i])
+        j--;
+    swap_chars(&permuta[i], &permuta[j]);
+    revers(permuta, i + 1, end);
+
 }
 
 int main(int ac, char **av)
 {
-	if (ac != 2)
-		return (1);
-	sort(av[1]);
-	puts(av[1]);
-	int len = 0;
-	while(av[1][len])
-		len++;
-	while ((permut(av[1], len - 1)) != 0)
-		puts(av[1]);
-	return (0);
+    int     length;
+    char    *permuta;
+
+    if (ac != 2 || !av[1] || !*av[1])
+    return (1);
+    permuta = av[1];
+    length = ft_strlen(permuta);
+    if (length == 1)
+        return (puts(permuta), 0);
+    sort_permuta(permuta);
+    do {
+        puts(permuta);
+    } while (find_permutation(permuta, length - 1));
+    return (0);
 }
-
-
-/****************/
-
-// void	swap(char *a, char *b)
-// {
-// 	char tmp = *a;
-// 	*a = *b;
-// 	*b = tmp;
-// }
-
-// void	reverse(char *str, int start, int end)
-// {
-// 	while (start < end)
-// 	{
-// 		swap(&str[start], &str[end]);
-// 		start++;
-// 		end--;
-// 	}
-// }
-
-// int	next_permutation(char *str, int len)
-// {
-// 	int i = len - 2;
-
-// 	// Step 1: Find the first character from the end which is smaller than the next
-// 	while (i >= 0 && str[i] >= str[i + 1])
-// 		i--;
-// 	if (i < 0)
-// 		return (0); // All permutations done
-
-// 	// Step 2: Find the next larger character to swap with
-// 	int j = len - 1;
-// 	while (str[j] <= str[i])
-// 		j--;
-
-// 	swap(&str[i], &str[j]);
-
-// 	// Step 3: Reverse the suffix
-// 	reverse(str, i + 1, len - 1);
-// 	return (1);
-// }
-
-// void	sort_string(char *str)
-// {
-// 	int i, swapped;
-// 	swapped = 1;
-// 	while (swapped)
-// 	{
-// 		swapped = 0;
-// 		i = 0;
-// 		while (str[i + 1])
-// 		{
-// 			if (str[i] > str[i + 1])
-// 			{
-// 				swap(&str[i], &str[i + 1]);
-// 				swapped = 1;
-// 			}
-// 			i++;
-// 		}
-// 	}
-// }
-
-// int	main(int argc, char **argv)
-// {
-// 	int len = 0;
-
-// 	if (argc != 2)
-// 		return (1);
-
-// 	while (argv[1][len])
-// 		len++;
-
-// 	sort_string(argv[1]);       // Step 0: Sort to start with smallest permutation
-// 	puts(argv[1]);        // Print the first permutation
-
-// 	while (next_permutation(argv[1], len))
-// 		puts(argv[1]);
-
-// 	return (0);
-// }
