@@ -10,44 +10,50 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef BUFFER_SIZE
+#define BUFFER_SIZE 10
+#endif
+#include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 13
-#endif
+#include <stdlib.h>
 
-#include <stdio.h>
-
-char	*ft_strdup(char *str)
+/*
+pattern is av[1] exactly
+get line from stdin
+print it after scanning it
+*/
+char	*ft_strdup(char *str, int *sig)
 {
-	char	*line;
-	int		i;
-
 	if (!str)
 		return (NULL);
-	line = malloc(strlen(str) + 1);
+
+	int i = 0;
+	while (str[i])
+		i++;
+
+	char *line = malloc(i + 1);
 	if (!line)
-		return (perror("Error"), NULL);
+		return (*sig = 303, perror("Error"), NULL);
+
 	i = -1;
 	while (str[++i])
-	{
 		line[i] = str[i];
-	}
 	line[i] = '\0';
 	return (line);
 }
 
 void	printline(char *line, char *av)
 {
-	int i = 0, j;
-
-	while (line[i])
-	{
-		j = 0;
+	int i = 0;
+	if (!line || !av)
+		return ;
+	while (line[i]) {
+		int j = 0;
 		while (line[i] == av[j] && av[j])
 			i++, j++;
-		if (av[j] == '\0') {
+
+		if (!av[j]) {
 			j = -1;
 			while (av[++j])
 				write(1, "*", 1);
@@ -60,236 +66,60 @@ void	printline(char *line, char *av)
 	write(1, "\n", 1);
 }
 
-char	*getinput(int fd, char *av)
+char	*getinput(int fd, char *av, int *sig)
 {
-	int rd, i, j;
+	int i = 0, j;
+
 	char buff[BUFFER_SIZE], line[100000];
 
-	i = 0;
-	while (1)
-	{
-		rd = read(fd, buff, BUFFER_SIZE);
+	while (1) {
+		int rd = read(fd, buff, BUFFER_SIZE);
 		if (rd < 0)
-			return (perror("Error"), NULL);
+			return (*sig = 404, perror("Error"), NULL);
+		if (!rd && !i)
+			return (NULL);
 		else if (!rd) {
-			printline(ft_strdup(line), av);
+			if (BUFFER_SIZE > 1)
+				line[i] = '\0'; // Good practice.
+			printline(ft_strdup(line, sig), av);
 			return (NULL);
 		}
+
 		j = 0;
-		while (j < rd)
-		{
+		while (j < rd) {
+			line[i] = buff[j];
 			if (buff[j] == '\n')
 				break ;
-			line[i] = buff[j];
 			i++, j++;
 		}
-		line[i] = '\0'; // overwriten in line[i] = buff[j];
-		if (buff[j] == '\n') {
+		if (buff[j] == '\n')
 			break ;
-		}
 	}
-	return (ft_strdup(line));
+	line[i] = '\0';
+	return (ft_strdup(line, sig));
 }
 
 int main(int ac, char **av)
 {
 	if (ac != 2 || BUFFER_SIZE < 1 || !av[1] || !av[1][0])
+		return 1;
+	int sig = 0;
+
+	char *line = getinput(0, av[1], &sig);
+	if (!line && (sig == 404 || sig == 303)) // handle read and malloc error cases. && no input case just EOF;
 		return (1);
-	char *line;
-	if (!(line = getinput(0, av[1])))
-		return (1);
+	else if (!line)
+		return (0);
 	while (line) {
 		printline(line, av[1]);
 		free(line);
-		line = getinput(0, av[1]);
+		line = getinput(0, av[1], &sig);
 	}
+
+	if (!line && (sig == 404 || sig == 303)) // handle read and malloc error cases.
+		return (1);
+
+	free(line); // no need test leek please
+
 	return (0);
 }
-
-/**    TOP VERSION    **/
-// #ifndef BUFFER_SIZE
-// #define BUFFER_SIZE 5
-// #endif
-// #include <stdio.h>
-// #include <string.h>
-// #include <unistd.h>
-// #include <stdlib.h>
-
-
-// char	*ft_strdup(char *s, int *signal)
-// {
-// 	int i = 0;
-// 	if (!s)
-// 		return NULL;
-// 	while (s[i])
-// 		i++;
-// 	char *line = malloc(i+1);
-// 	if (!line) {
-// 		*signal = 404;
-// 		return perror("Error"), NULL;
-// 	}
-
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		line[i] = s[i];
-// 		i++;
-// 	}
-// 	line[i] = '\0';
-// 	return (line);
-// }
-
-// void	printline(char *line, char *av)
-// {
-// 	int i = 0;
-
-// 	if (!line || !av)
-// 		return ;
-
-// 	while (line[i])
-// 	{
-// 		int j = 0;
-// 		while (line[i] == av[j] && av[j])
-// 			i++, j++;
-// 		if (!av[j])
-// 		{
-// 			j = -1;
-// 			while (av[++j])
-// 				write(1, "*", 1);
-// 		}
-// 		else {
-// 			i = i - j;
-// 			write(1, &line[i++], 1);
-// 		}
-// 	}
-// 	write(1, "\n", 1);
-// }
-
-// char	*getinput(int fd, char *av, int *signal)
-// {
-// 	int rd, i, j;
-// 	char	buff[BUFFER_SIZE], line[100000];
-
-// 	i = 0;
-// 	while (1)
-// 	{	rd = read(fd, buff, BUFFER_SIZE);
-// 		if (rd < 0) {
-// 			*signal = 606;
-// 			return (perror("Error"), NULL);
-// 		}
-// 		if (rd == 0 && i == 0)
-// 			return *signal = 0, NULL;
-// 		if (rd == 0)
-// 		{
-// 			line[i] = '\0';
-// 			printline(ft_strdup(line, signal), av);
-// 			return (NULL);
-// 		}
-// 		j = 0;
-// 		while (j < rd)
-// 		{
-// 			line[i] = buff[j];
-// 			if (buff[j] == '\n')
-// 				break;
-// 			i++, j++;
-// 		}
-// 		if (buff[j] == '\n')
-// 			break;
-// 	}
-// 	line[i] = '\0';
-// 	return (ft_strdup(line, signal));
-// }
-
-// int main(int ac, char **av)
-// {
-// 	if (ac != 2 || BUFFER_SIZE < 1)
-// 	return 1;
-// 	if (!av[1] || !av[1][0])
-// 		return 1;
-// 	int signal = 301;
-// 	char *line = getinput(0, av[1], &signal);
-// 	if (!line && (signal == 404 || signal == 606))
-// 		return 1;
-// 	if (!line || signal == 0)
-// 		return 0;
-
-// 	while (line)
-// 	{
-// 		printline(line, av[1]);
-// 		free(line);
-// 		line = getinput(0, av[1], &signal);
-// 	}
-// 	if (!line && (signal == 404 || signal == 606))
-// 		return 1;
-// 	free(line);
-// 	return 0;
-// }
-/**  END TOP VERSION  **/
-
-// void	printline(char *line, char *av)
-// {
-// 	int	i = 0, j;
-
-// 	i = 0, j = 0;
-// 	if (!line || !av)
-// 		return ;
-// 	while (line[i])
-// 	{
-// 		j = 0;
-// 		while (line[i] == av[j] && av[j])
-// 			i++, j++;
-// 		if (!av[j])
-// 		{
-// 			j = -1;
-// 			while (av[++j])
-// 				write(1, "*", 1);
-// 		}
-// 		else
-// 		{
-// 			i = i - j;
-// 			write(1, &line[i], 1);
-// 			i++;
-// 		}
-// 	}
-// 	write(1, "\n", 1);
-// 	return ;
-// }
-
-// int	main(int ac, char **av)
-// {
-// 	// char	*line;
-// 	char	buff[BUFFER_SIZE], line1[100000];
-
-// 	if (BUFFER_SIZE < 1 || ac != 2 || !av[1][0])
-// 		return (1);
-// 	int rd, i, j;
-// 	while (1)
-// 	{
-// 		i = 0;
-// 		while (1)
-// 		{
-// 			rd = read(0, buff, -1);
-// 			if (!rd)
-// 			{
-// 				printline(line1, av[1]);
-// 				return (0);
-// 			}
-// 			else if (rd < 0)
-// 				return (perror("Error"), 1);
-// 			j = 0;
-// 			while (j < rd)
-// 			{
-// 				if (buff[j] == '\n')
-// 					break ;
-// 				line1[i] = buff[j];
-// 				i++, j++;
-// 			}
-// 			line1[i] = '\0';
-// 			if (buff[j] == '\n')
-// 				break ;
-// 		}
-// 		printline(line1, av[1]);
-// 		line1[0] = '\0';
-// 	}
-// 	return (0);
-// }
